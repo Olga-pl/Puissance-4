@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="test.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/puissance_4.css">
+</head>
+
+<body>
+
+<h1>Puissance 4</h1>
+<div id="input">
+    <label for="size_row"></label>
+    <input type="number" id="size_row">
+    <label for="size_col"></label>
+    <input type="number" id="size_col">
+    <button id="submit" type="submit" >Submit</button>
+    </div>
+
+<div id="container" style="display: none"></div>
+
+<div id="affiche" style="display: none">
+    <br>
+    Your turn to play:
+    <div id="current"></div>
+    <br>
+Player 1:
+<div id="player1"></div>
+    <br>
+Player 2:
+<div id="player2"></div>
+    <br>
+<button type='submit' id='refresh'>Refresh</button>
+<br>
+
+</div>
+
+<script>
+
+$('#submit').click(function(){
+    var x = $("#size_row").val();
+    var y = $("#size_col").val();
+    if (x > 25 || y > 20 || x < 6 || y < 6) {
+        alert('Please enter correct values');
+    }
+    else {
+        $('#container').css('display', 'block');
+        $('#container').puissance4();
+    }
+});
+</script>
+</body>
+
+</html>
